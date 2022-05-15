@@ -1,0 +1,120 @@
+<div class="cart-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <div class="cart-list">
+          <div class="cart-list-title">GIỎ HÀNG CỦA BẠN</div>
+          <div class="cart-item-content">
+            {{! <p class="text-center">Không có sản phẩm nào</p> }}
+            {{#each product}}
+              <div class="cart-list-item">
+                <div class="cart-list-img">
+                  <img src="{{this.image}}" alt="" class="img-in-list" />
+                </div>
+                <div class="cart-list-select">
+                  <div class="cart-list-info">
+                    <h5 class="cart-list-name">{{this.name}}</h5>
+                    <p class="cart-list-price">{{this.price}}</p>
+
+                  </div>
+                  <div class="cart-list-option">
+                    <div class="cart-list-select-size">
+                      <p>Size</p>
+                      <select class="cart-list-size form-select">
+
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                      </select>
+                    </div>
+                    <div class="cart-list-quantity">
+
+                      <p class="cart-list-quantity-tiltle">Số Lượng</p>
+                      <input
+                        type="number"
+                        value="1"
+                        min="0"
+                        class="text-center"
+                        id="input-quantity"
+                      />
+                    </div>
+
+                  </div>
+                </div>
+                <div class="cart-list-total-btn">
+                  <div class="d-flex">
+                    <p class="cart-total-price">{{this.price}}</p>
+                    <span style="color: #f15e2c; margin-left:6px;">VND</span>
+                  </div>
+
+                  <div class="cart-list-like">
+
+                    <i class="cart-list-icon fa-solid fa-heart"></i>
+                  </div>
+
+                  <button
+                    id="{{this._id}}"
+                    type="submit"
+                    class="cart-list-btn-trash btn btn-danger"
+                  >
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+
+                </div>
+              </div>
+            {{else}}
+              <p class="text-center">Không có sản phẩm nào</p>
+            {{/each}}
+            <div class="cart-empty text-center"></div>
+          </div>
+
+          <div class="cart-list-change">
+
+            <a href="/"><button class="cart-list-back btn btn-dark">QUAY LẠI</button></a>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="cart-oder-content">
+          <div class="cart-oder">
+            <div class="cart-oder-tiltle">
+              ĐƠN HÀNG
+            </div>
+
+            <div class="card-info-content">
+
+            </div>
+            <div class="cart-oder-info-down">
+              <p class="cart-oder-down-tiltle">Giảm giá</p>
+              <p class="cart-down -price"> - 0 VND</p>
+            </div>
+            <div class="cart-oder-promotion">
+              <h5 class="cart-oder-promotion-tiltle">MÃ KHUYẾN MÃI</h5>
+              <div class="cart-promotion-input">
+                <input type="text" name="" class="promotion-code" />
+                <button class="cart-oder-btn btn btn-success" type="submit">ÁP
+                  DỤNG</button>
+              </div>
+            </div>
+            <div class="cart-oder-total">
+              <p class="cart-oder-total-tiltle">TỔNG CỘNG</p>
+              <p class="cart-oder-total-title-price"></p>
+
+            </div>
+
+            <a href="/payment">
+              <div class="cart-oder-payment btn btn-danger">
+                THANH TOÁN
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/handleCart.js"></script>

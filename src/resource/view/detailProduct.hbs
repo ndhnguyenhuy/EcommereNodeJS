@@ -1,0 +1,82 @@
+<div class="container-sm mt-5">
+  <div class="row">
+    <div class="col-6">
+      <div id="{{product._id}}" class="product-img">
+        <div class="detail-image">
+          <img src="{{product.image}}" alt="" class="detail-img" />
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+
+      <div class="product-info-fee">
+        <div class="product-info">
+          <h2 class="product-heading">{{product.name}}</h2>
+          <p>{{product.decription}}</p>
+          <div class="d-flex box-price">
+            <p class="product-price">{{product.price}} </p>
+            <span style="color: red; margin-left:8px;">VND</span>
+          </div>
+
+        </div>
+        <div class="product-decription">
+          <p class="decription-text">
+            Vẫn là màu trắng cổ điển của dòng giày Basas, nhưng phần mũi của
+            những sản phẩm thuộc Basas "Bumper Gum" lại sở hữu một diện mạo hoàn
+            toàn khác biệt nhờ miếng cao su thô màu nâu đầy sáng tạo, phá cách.
+            "Bumper Gum" là đôi giày dành cho những ai tìm kiếm sự mới mẻ từ
+            những điều quen thuộc, truyền thống
+          </p>
+          <div class="product-select">
+            <div class="select-size">
+              <p>Vui lòng chọn size</p>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Size</option>
+                <option value="1">39</option>
+                <option value="2">40</option>
+                <option value="3">41</option>
+                <option value="3">42</option>
+                <option value="3">43</option>
+              </select>
+            </div>
+            <div class="select-quantity">
+              <p> Số lượng</p>
+              <div class="control-quantity">
+                {{! <i class="icon-down fa-solid fa-minus"></i> }}
+                <input
+                  type="number"
+                  value="0"
+                  min="0"
+                  class="quantity-product"
+                />
+                {{! <i class="icon-add fa-solid fa-plus"></i> }}
+              </div>
+            </div>
+          </div>
+          <div class="product-add-cart">
+            <div class="notification">
+              <i class="text-light icon-check fa-solid fa-check"></i>
+              <span class="text-light">Đã thêm sản phẩm vào giỏ hàng</span>
+            </div>
+
+            <a class="add-cart"><button
+                type="submit"
+                class="btn-add btn"
+                data-toggle="modal"
+                data-target="#exampleModal"
+              >Thêm vào giỏ hàng</button></a>
+            <button type="button" class="like-product btn">
+              <i class="icon-like fa-solid fa-heart"></i></button>
+
+          </div>
+          <a href="/payment">
+            <div class="product-payment rounded">
+              <h4 class="product-text">Thanh toán</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/handleDetail.js"></script>

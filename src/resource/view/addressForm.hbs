@@ -1,0 +1,157 @@
+<div class="address-content mt-5 mb-5">
+  <div class="container">
+    <form action="/payment/success" id="form" method="POST" >
+      <div class="row">
+      <div class="col-7">
+        <div class="delivery-info">
+          <div class="delivery-info tiltle">
+            <h3>THÔNG TIN GIAO HÀNG</h3>
+          </div>
+          <div class="delivery-info-form">
+           
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="name"
+                  id="form-name"
+                  placeholder="Họ tên của bạn"
+                />
+                <span class="form-message"></span>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="number"
+                  name="phone"
+                  id="phone"
+                  placeholder="Số điện thoại"
+                />
+                <span class="form-message"></span>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="email"
+                  name="email"
+                  id="email"  
+                  placeholder="Email"
+                />
+                <span class="form-message"></span>
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="address"
+                  id="address"
+                  placeholder="Địa chỉ"
+                />
+                <span class="form-message"></span>
+              </div>
+              <div class="form-group">
+                <select class="form-select" name="province" id="province">
+                  <option value="">---Chọn Tỉnh /Thành Phố</option>
+                </select>
+              </div>
+              <div class="select-detail form-group">
+                <select class="form-select " name="district" id="district">
+                  <option value="">---Chọn Quận/Huyện</option>
+                </select>
+                <select class="form-select" name="ward" id="ward">
+                  <option value="">---Chọn Phường /Xã</option>
+                </select>
+              </div>
+              <div class="delievery-method">
+                <h4 class="delivery-heading">PHƯƠNG THỨC GIAO HÀNG</h4>
+                <div class="delivery-speed">
+                   
+                     <div><i class=" icon-checked fa-solid fa-check"></i></div> 
+                     <p class="deliver-text">Tốc độ tiêu chuẩn (từ 2-5 ngày làm việc)</p>
+                     <p class="delivery-price"> 0  VNĐ</p>
+                </div>
+              </div>
+              <div class="delievery-pay">
+                <h4 class="delivery-heading">PHƯƠNG THỨC THANH TOÁN</h4>
+                <div class="delivery-speed">
+                    <div>
+                       <i class=" icon-checked fa-solid fa-check"></i>
+                    </div> 
+                     <p class="deliver-text">Thanh toán trực tiếp khi nhận hàng (COD)</p>
+                   
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+       <div class="col-4">
+        <div class="cart-oder-content">
+          <div class="cart-oder">
+            <div class="cart-oder-tiltle">
+              ĐƠN HÀNG
+            </div>
+          <div class="card-info-content">
+          {{#each info}}
+            <div>
+              <div class="cart-oder-info">
+              <p class="cart-oder-info-tiltle">{{this.name}}</p>
+              <p class="cart-oder-price">{{this.price}} </p>
+              </div>
+              <div class="cart-info-select">
+                <p class="cart-oder-info-quantity">{{this.quantity}}</p> </p>
+                <p class="cart-oder-size">{{this.size}} </p>
+                </div>
+                </div>
+                </div>
+             {{/each}}
+            
+            <div class="cart-oder-info-down">
+              <p class="cart-oder-info-tiltle">Giảm giá</p>
+              <p class="cart-oder-down"> - 0 VND</p>
+            </div>
+            <div class="cart-oder-info">
+              <p class="cart-oder-info-tiltle">Phí Vận Chuyển </p>
+              <p class="cart-oder-fee">0 VNĐ</p>
+            </div>
+            </div>
+            
+            <div class="cart-pay-total">
+              <p class="cart-oder-total-tiltle">TỔNG CỘNG</p>
+              <p class="cart-oder-total-title-price"></p>
+
+            </div>
+            <a href="">
+              <button  class="cart-oder-payment submit-btn btn btn-danger">
+              THANH TOÁN
+            </button>
+          </div></a>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+<script src="/js/deliveryProductAddress.js"></script>
+<script src="/js/Validate.js"></script>
+<script>
+   Validator({
+        form: "#form",
+        errSelector: ".form-message",
+        formGroupSelector: ".form-group",
+        rules: [
+          Validator.isRequired("#form-name", "Vui lòng nhập tên đầy đủ"),
+          Validator.isRequired("#phone", "Vui lòng nhập số điện thoại"),
+           Validator.minLength("#phone", 10),
+          Validator.isEmail("#email", " Vui lòng nhập email hợp lệ"),
+          Validator.isRequired("#address", "Vui lòng nhập địa chỉ của bạn"),
+
+        ],
+        onSubmit: function (data) {
+          console.log(data);
+        },
+      });
+ 
+</script>
+<script  src="/js/handlePay.js">
+  
+</script>
