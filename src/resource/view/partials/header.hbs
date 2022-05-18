@@ -10,13 +10,27 @@
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
+      data-bs-target="#mobile-navbar"
+      aria-controls="mobile-navbar"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div id="mobile-navbar" class="d-none navbar-mobile">
+      <div class="navbar-mobile-content">
+        <i class="fa-solid fa-xmark"></i>
+        <div class="navbar-mobile-user">
+          <img src="" alt="" class="navbar-mobile-user-img" />
+          <span class="navbar-mobile-user-name"></span>
+        </div>
+        <ul class="navbar-mobile-list">
+          <li class="navbar-mobile-list-item">Đơn hàng </li>
+          <li class="navbar-mobile-list-item">Giỏ hàng</li>
+          <li class="navbar-mobile-list-item">Đăng Xuất</li>
+        </ul>
+      </div>
+    </div>
     {{! ========== }}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-md-center">

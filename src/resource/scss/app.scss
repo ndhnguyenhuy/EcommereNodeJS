@@ -786,3 +786,13 @@ a {
 .footer {
   margin-top: 100px;
 }
+// =================navbar-mobile===================
+.navbar-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #00dbde;
+  width: 20%;
+  height: 100vh;
+  z-index: 99;
+}
