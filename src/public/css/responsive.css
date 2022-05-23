@@ -1,0 +1,10 @@
+@media screen and (max-width: 579px) {
+  .title {
+    font-size: 16px; }
+  .content-btn {
+    font-size: 12px;
+    padding: 4px 8px !important; }
+  .content-see {
+    height: 200px !important; }
+  .content-promotion {
+    height: 200px !important; } }

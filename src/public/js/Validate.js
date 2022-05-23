@@ -108,9 +108,9 @@ function Validator(options) {
         // trường hợp k submit bằng JS
       } else if (typeof options.onSubmit === "function") {
         const submitBtn = document.querySelector(".submit-btn");
-        submitBtn.onclick = function () {
+        submitBtn.addEventListener("click", function () {
           formElement.submit();
-        };
+        });
       }
     };
 

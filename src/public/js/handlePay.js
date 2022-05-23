@@ -21,20 +21,3 @@ var totalPriceValue = arrPrice.reduce(function (total, priceNumber) {
 totalPayment.innerText = `${formatNumber(totalPriceValue)} VND`;
 const inputE = $$("input");
 console.log(inputE);
-// payBtn.onclick = function () {
-//   fetch("/echo/json/", {
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//     },
-//     method: "POST",
-//     body: JSON.stringify(),
-//   })
-//     .then((res) => res.json())
-//     .then(function (data) {
-//       console.log(data);
-//     })
-//     .catch(function (err) {
-//       console.log(err);
-//     });
-// };

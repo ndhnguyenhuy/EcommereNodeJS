@@ -16,6 +16,8 @@ function getToken() {
       })
       .then((body) => {
         // TODO handle body
+        var user = body.username;
+        localStorage.setItem("username", user);
         var getToken = body.token;
         document.cookie = Cookies.set("token", `${getToken}`, {
           expires: 1,
@@ -28,3 +30,10 @@ function getToken() {
       });
   });
 }
+function renderUserName() {
+  var username = localStorage.getItem("username");
+  console.log(username);
+  const displayUser = document.querySelector(".header-user-name");
+  displayUser.innerText = username;
+}
+renderUserName();

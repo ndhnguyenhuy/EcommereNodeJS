@@ -27,5 +27,12 @@ class AccountController {
         res.status(500).send("tai khoan da ton tai");
       });
   }
+  show(req, res, next) {
+    Account.find({})
+      .then((data) => {
+        res.json(data);
+      })
+      .catch(next);
+  }
 }
 module.exports = new AccountController();

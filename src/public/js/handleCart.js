@@ -1,7 +1,6 @@
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
 function handleCart() {
+  const $ = document.querySelector.bind(document);
+  const $$ = document.querySelectorAll.bind(document);
   handlePriceChange();
 }
 
@@ -35,7 +34,7 @@ function handlePriceChange() {
         Number(numberPrice * Number(quantity.value))
       );
     };
-    btnClickLike.onclick = function () {
+    btnClickLike.addEventListener("click", function () {
       btnClickLike.classList.toggle("active-btn");
       clickLike.classList.toggle("active-like");
       if (btnClickLike.classList.contains("active-btn")) {
@@ -109,8 +108,8 @@ function handlePriceChange() {
       }
 
       // xu li don dat hang
-    };
-    deleteCart.onclick = function () {
+    });
+    deleteCart.addEventListener("click", function () {
       const idTrash = deleteCart.getAttribute("id");
 
       fetch(`http://localhost:3000/cart/${idTrash}`, {
@@ -121,7 +120,7 @@ function handlePriceChange() {
         },
       }).then(() => console.log("thành công"));
       location.reload();
-    };
+    });
   });
 }
 

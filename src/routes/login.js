@@ -12,12 +12,14 @@ router.post(
     Account.findOne({ useremail: useremail, password: password })
       .then((data) => {
         if (data) {
+          var username = data.username;
           var token = jwt.sign({ _id: data._id }, "mk", {
             expiresIn: "30s",
           });
           res.json({
             mesasge: "Thanh cong",
             token: token,
+            username: username,
           });
         } else {
           res.render("nofi", { layout: false });
@@ -34,9 +36,7 @@ router.get(
   (req, res, next) => {
     try {
       var token = req.cookies.token;
-      console.log(token);
       var data = jwt.verify(token, "mk");
-      console.log({ data });
       if (data) {
         next();
       }
