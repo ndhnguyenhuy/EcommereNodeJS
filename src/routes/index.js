@@ -29,7 +29,7 @@ function route(app) {
   app.get("/private", LoginRouter);
 
   //
-  app.get("/show", accountRouter);
+
   // router thanh toán
   app.get("/payment", payrouter);
   app.use("/payment", payrouter);
